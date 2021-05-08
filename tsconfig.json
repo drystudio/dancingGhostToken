@@ -1,0 +1,26 @@
+{
+  "include": ["test", "scripts"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "target": "es2017",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "lib": [
+      "esnext.asynciterable",
+      "es2020"
+    ],
+    "strict": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "incremental": true,
+    "typeRoots": [
+      "node_modules/@types",
+    ]
+  }
+}
