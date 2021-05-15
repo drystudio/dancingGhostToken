@@ -23,13 +23,14 @@ task('mint', 'Mint a new ERC721 token')
   })
 
 task('setTokenUri', 'Set token uri')
-  .addParam('tokenId', 'token ID')
+  .addParam('address', 'ERC721 contract address')
+  .addParam('token', 'token ID')
   .addParam('uri', 'uri')
   .setAction(async (args, hre) => {
     const Token = await hre.ethers.getContractFactory('DancingGhostToken')
     const token = Token.attach(args.address)
 
-    const result = await token.setTokenUri(
+    const result = await token.setTokenURI(
       hre.ethers.BigNumber.from(args.token).toHexString(),
       args.uri
     )
@@ -38,7 +39,7 @@ task('setTokenUri', 'Set token uri')
 
 task('getTokenUri', 'Prints token uri')
   .addParam('address', 'ERC721 contract address')
-  .addParam('tokenId', 'token ID')
+  .addParam('token', 'token ID')
   .setAction(async (args, hre) => {
     const Token = await hre.ethers.getContractFactory('DancingGhostToken')
     const token = Token.attach(args.address)
